@@ -10,7 +10,7 @@ var routes_api = require('./routes/routes');
 
 // Server
 app.use(express.static(__dirname + 'public'));
-app.use('/api', routes_api);
+app.use('/api/v1', routes_api);
 
 app.listen(port, function() {
   console.log('Listening at http://localhost:' + port);

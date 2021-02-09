@@ -9,9 +9,6 @@ const getMessage = async() => {
         messages.push(satellite.message);
     });
 
-    console.log('puntoControl');
-    console.log(satellites);
-
     let result = [];
     let err;
     for (let i = 0; i < messages[0].length; i++) {

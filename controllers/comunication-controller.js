@@ -4,16 +4,11 @@ const { getMessage } = require('../services/message-service');
 const { satellites } = require('../database/satellites');
 
 const getSecret = async (body, satellite_name) => {
-    console.log('INICIO');
-    console.log(satellites);
-    console.log(satellite_name);
 
     let satellitesForUpdate = [];
     if (!satellite_name) {
-        console.log('lamada comun');
         satellitesForUpdate = body.satellites;
     } else if (body) {
-        console.log('lamada split' + satellite_name);
         satellitesForUpdate.push({
             name: satellite_name,
             distance: body.distance,

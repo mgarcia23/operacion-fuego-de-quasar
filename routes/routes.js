@@ -30,6 +30,7 @@ app.post('/topsecret_split/:satellite_name', function (req, res) {
 });
 
 app.get('/topsecret_split/:satellite_name', function (req, res) {
+  let body;
   let satellite_name = req.params.satellite_name;
 
   getSecret(body, satellite_name)

@@ -6,7 +6,7 @@ var app  = express();
 var port = 3001;
 
 // Routes
-var routes_api = require('./server_routes/routes_api');
+var routes_api = require('./routes/routes');
 
 // Server
 app.use(express.static(__dirname + 'public'));

@@ -1,29 +1,37 @@
+const { updatesatellites } = require('../services/satellite-service');
 const { getLocation } = require('../services/location-service');
 const { getMessage } = require('../services/message-service');
+const { satellites } = require('../database/satellites');
 
-const getSecret = async(body) => {
+const getSecret = async (body, satellite_name) => {
+    console.log('INICIO');
+    console.log(satellites);
+    console.log(satellite_name);
 
-    let satelites = body.satellites
-
-    let messages = [];
-    let distances = [];
-    satelites.forEach(satelite => {
-        messages.push(satelite.message)
-        distances.push({
-            name: satelite.name,
-            distance: satelite.distance
+    let satellitesForUpdate = [];
+    if (!satellite_name) {
+        console.log('lamada comun');
+        satellitesForUpdate = body.satellites;
+    } else if (body) {
+        console.log('lamada split' + satellite_name);
+        satellitesForUpdate.push({
+            name: satellite_name,
+            distance: body.distance,
+            message: body.message
         });
-    });
+    }
+
+    await updatesatellites(satellitesForUpdate);
 
     let message;
-    await getMessage(messages)
+    await getMessage()
         .then(msg => message = msg)
         .catch(err => {
             throw err;
         });
 
     let position;
-    await getLocation(distances)
+    await getLocation()
         .then(res => position = res)
         .catch(err => {
             throw err;

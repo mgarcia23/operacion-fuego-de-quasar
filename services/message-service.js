@@ -1,13 +1,23 @@
+const { satellites } = require("../database/satellites");
+
 // input: el mensaje tal cual es recibido en cada satélite
 // output: el mensaje tal cual lo genera el emisor del mensaje
-const getMessage = async(mensajes) => {
+const getMessage = async() => {
     
+    let messages = [];
+    satellites.forEach(satellite => {
+        messages.push(satellite.message);
+    });
+
+    console.log('puntoControl');
+    console.log(satellites);
+
     let result = [];
     let err;
-    for (let i = 0; i < mensajes[0].length; i++) {
+    for (let i = 0; i < messages[0].length; i++) {
         err = true;
-        for (let j = 0; j < mensajes.length; j++) {
-            const mensaje = mensajes[j];
+        for (let j = 0; j < messages.length; j++) {
+            const mensaje = messages[j];
             const elementoMensaje = mensaje[i];
             if (elementoMensaje) {
                 result.push(elementoMensaje);
@@ -19,7 +29,7 @@ const getMessage = async(mensajes) => {
             throw 'Cantidad de mensajes insuficientes para descifrar mensaje de auxilio';
         }
     };
-
+    
     let response = deleteDuplicateElements(result);
 
     return response.join(' ').trim();

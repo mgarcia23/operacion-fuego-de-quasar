@@ -1,44 +1,19 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const { getSecret } = require('../controllers/comunication-controller');
+const comunicationController = require('../controllers/secret-controller');
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+module.exports = (router) => {
 
-app.post('/topsecret', function (req, res) {
-  let body = req.body;
+  /** post all satellites messages and distances */
+  router
+      .route('/topsecret')
+      .post(comunicationController.setSecrets);
 
-  getSecret(body)
-    .then(response => res.json(response))
-    .catch(err => {
-      console.log(err);
-      res.status(404).json();
-    });
-});
+  /** post sattelite message and distance */
+  router
+      .route('/topsecret_split/:satellite_name')
+      .post(comunicationController.setSecret);
 
-app.post('/topsecret_split/:satellite_name', function (req, res) {
-  let body = req.body;
-  let satellite_name = req.params.satellite_name;
-
-  getSecret(body, satellite_name)
-    .then(response => res.json(response))
-    .catch(err => {
-      console.log(err);
-      res.status(404).json();
-    });
-});
-
-app.get('/topsecret_split/:satellite_name', function (req, res) {
-  let body;
-  let satellite_name = req.params.satellite_name;
-
-  getSecret(body, satellite_name)
-    .then(response => res.json(response))
-    .catch(err => {
-      console.log(err);
-      res.status(200).json('No hay información suficiente para indicar posición y mensaje de auxilio');
-    });
-});
-
-module.exports = app;
+  /** get message and position */
+  router
+      .route('/topsecret_split/:satellite_name')
+      .get(comunicationController.getSecret)
+};

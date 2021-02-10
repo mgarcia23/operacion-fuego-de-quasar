@@ -1,51 +1,23 @@
 // Modules
 const express = require('express');
+const bodyParser = require('body-parser');
 
 // Config
-var app  = express();
-var port = 3001;
+const app = express();
+const router = express.Router();
 
 // Routes
-var routes_api = require('./routes/routes');
+const routes = require('./routes/routes');
 
 // Server
-app.use(express.static(__dirname + 'public'));
-app.use('/api/v1', routes_api);
+routes(router);
+app.use(bodyParser.json());
+app.use('/api/v1', router);
+
+const port = process.env.PORT || 3001;
 
 app.listen(port, function() {
-  console.log('Listening at http://localhost:' + port);
-});
-
-app.on('error', function(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-});
-
-app.on('listening', function() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log(`Mariano API v1 on port: ${port}`);
 });
 
 module.exports = app;

@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "e2f63244-b6ed-4da3-bf8b-3f061bb5f1c3",
+		"name": "operacion-fuego-de-quasar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "TopSecret-Ok",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"satellites\": [\r\n        {\r\n            \"name\": \"kenobi\",\r\n            \"distance\": 100.0,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"\",\r\n                \"mensaje\",\r\n                \"\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"skywalker\",\r\n            \"distance\": 115.5,\r\n            \"message\": [\r\n                \"\",\r\n                \"es\",\r\n                \"\",\r\n                \"\",\r\n                \"secreto\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"sato\",\r\n            \"distance\": 142.7,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"un\",\r\n                \"\",\r\n                \"\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/topsecret",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"topsecret"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TopSecretSplit-Ok",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"distance\":200.0,\r\n   \"message\":[\r\n      \"este\",\r\n      \"\",\r\n      \"\",\r\n      \"mensaje\",\r\n      \"\"\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/v1/topsecret_split/kenobi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"topsecret_split",
+								"kenobi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TopSecretSplit-Ok",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/v1/topsecret_split",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"v1",
+								"topsecret_split"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AppEngine",
+			"item": [
+				{
+					"name": "TopSecret-Ok",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"satellites\": [\r\n        {\r\n            \"name\": \"kenobi\",\r\n            \"distance\": 100.0,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"\",\r\n                \"mensaje\",\r\n                \"\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"skywalker\",\r\n            \"distance\": 115.5,\r\n            \"message\": [\r\n                \"\",\r\n                \"es\",\r\n                \"\",\r\n                \"\",\r\n                \"secreto\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"sato\",\r\n            \"distance\": 142.7,\r\n            \"message\": [\r\n                \"este\",\r\n                \"\",\r\n                \"un\",\r\n                \"\",\r\n                \"\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://balmy-sanctuary-304401.df.r.appspot.com/api/v1/topsecret",
+							"protocol": "https",
+							"host": [
+								"balmy-sanctuary-304401",
+								"df",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"topsecret"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TopSecretSplit-Ok",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"distance\":200.0,\r\n   \"message\":[\r\n      \"este\",\r\n      \"\",\r\n      \"\",\r\n      \"mensaje\",\r\n      \"\"\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://balmy-sanctuary-304401.df.r.appspot.com/api/v1/topsecret_split/kenobi",
+							"protocol": "https",
+							"host": [
+								"balmy-sanctuary-304401",
+								"df",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"topsecret_split",
+								"kenobi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TopSecretSplit-Ok",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://balmy-sanctuary-304401.df.r.appspot.com/api/v1/topsecret_split",
+							"protocol": "https",
+							"host": [
+								"balmy-sanctuary-304401",
+								"df",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"topsecret_split"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

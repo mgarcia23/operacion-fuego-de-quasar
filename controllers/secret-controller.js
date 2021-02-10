@@ -10,7 +10,7 @@ module.exports = {
             res.json(response);
         } catch (err) {
             console.log(err);
-            res.send(404);
+            res.status(404).json();
         }
         next();
     },
@@ -26,8 +26,7 @@ module.exports = {
             let response = secretService.getSecret();
             res.json(response);
         } catch (err) {
-            console.log(err);
-            res.send(404);
+            res.status(404).json();
         }
         next();
     },
@@ -36,8 +35,7 @@ module.exports = {
             let response = secretService.getSecret();
             res.json(response);
         } catch (err) {
-            console.log(err);
-            res.send('No hay información suficiente para indicar posición y mensaje de auxilio');
+            res.status(200).json('No hay información suficiente para indicar posición y mensaje de auxilio');
         }
         next();
     }

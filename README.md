@@ -33,36 +33,42 @@ Devuelve:
 -   HTTP Status 200 si puede devolver posición de la nave y mensaje de auxilio
 -   HTTP Status 404 si no puede devolver posición de la nave y/o mensaje de auxilio
 ###### Request Body
-    {
-        "satellites": [
-            {
-                "name": "kenobi",
-                "distance": 100.0,
-                "message": ["este","","","mensaje",""]
-            },
-            {
-                "name": "skywalker",
-                "distance": 115.5,
-                "message": ["","es","","","secreto"]
-            },
-            {
-                "name": "sato",
-                "distance": 142.7,
-                "message": ["este","","un","",""]
-            }
-        ]
-    }
+```
+{
+    "satellites": [
+        {
+            "name": "kenobi",
+            "distance": 100.0,
+            "message": ["este","","","mensaje",""]
+        },
+        {
+            "name": "skywalker",
+            "distance": 115.5,
+            "message": ["","es","","","secreto"]
+        },
+        {
+            "name": "sato",
+            "distance": 142.7,
+            "message": ["este","","un","",""]
+        }
+    ]
+}
+```
 ###### Response Body
 - HTTP Status 200
-    {
-        "position": {
-            "x": -487.28591250000005,
-            "y": 1557.0142250000004
-        },
-        "message": "este es un mensaje secreto"
-    }
+```
+{
+    "position": {
+        "x": -487.28591250000005,
+        "y": 1557.0142250000004
+    },
+    "message": "este es un mensaje secreto"
+}
+```
 - HTTP Status 404
-    {}
+```
+{}
+```
 
 #### POST /api/v1/topsecret_split/:satellite_name
   - https://balmy-sanctuary-304401.df.r.appspot.com/api/v1/topsecret_split/:satellite_name
@@ -72,12 +78,15 @@ Devuelve:
 -   HTTP Status 200 si puede devolver posición de la nave y mensaje de auxilio
 -   HTTP Status 404 si no puede devolver posición de la nave y/o mensaje de auxilio
 ###### Request Body
+```
 {
-   "distance":200.0,
-   "message":["este","","","mensaje",""]
+"distance":200.0,
+"message":["este","","","mensaje",""]
 }
+```
 ###### Response Body
 - HTTP Status 200
+```
 {
     "position": {
         "x": -487.28591250000005,
@@ -85,8 +94,11 @@ Devuelve:
     },
     "message": "este es un mensaje secreto"
 }
+```
 - HTTP Status 404
+```
 {}
+```
 
 #### GET /api/v1/topsecret_split
   - https://balmy-sanctuary-304401.df.r.appspot.com/api/v1/topsecret_split
@@ -97,6 +109,7 @@ Devuelve:
 -   HTTP Status 200 con un mensaje indicando que tiene insuficiente información para indicar posición de la nave y/o mensaje de auxilio
 ###### Response Body
 - HTTP Status 200
+```
 {
     "position": {
         "x": -487.28591250000005,
@@ -104,10 +117,13 @@ Devuelve:
     },
     "message": "este es un mensaje secreto"
 }
+```
 - HTTP Status 200
+```
 {
     "No hay información suficiente para indicar posición y mensaje de auxilio"
 }
+```
 
 ## Recursos
 En el repositorio, dentro de la carpeta docs, se encuentran los siguientes recursos:

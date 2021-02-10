@@ -2,6 +2,7 @@
 Operación Fuego de Quasar como desafío para ingresar a MercadoLibre.
 
 Autor: Mariano García
+
 Hola! Soy programador backend en .NET pero tomé el examen como un desafío para involucrarme con NodeJS (cada tanto tenemos que salirnos de nuestra zona de confort). Doy fe de que ha sido exigente!! y he aprendido más de lo que esperaba :)
 
 ## Tecnologías utilizadas

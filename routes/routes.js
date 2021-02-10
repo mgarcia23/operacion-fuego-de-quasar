@@ -14,6 +14,6 @@ module.exports = (router) => {
 
   /** get message and position */
   router
-      .route('/topsecret_split/:satellite_name')
+      .route('/topsecret_split')
       .get(comunicationController.getSecret)
 };

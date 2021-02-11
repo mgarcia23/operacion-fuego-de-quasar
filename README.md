@@ -1,9 +1,4 @@
-# Desafío postulación MercadoLibre
-Operación Fuego de Quasar como desafío para ingresar a MercadoLibre.
-
-Autor: Mariano García
-
-Hola! Soy programador backend en .NET pero tomé el examen como un desafío para involucrarme con NodeJS (cada tanto tenemos que salirnos de nuestra zona de confort). Doy fe de que ha sido exigente!! y he aprendido más de lo que esperaba :)
+# Operación Fuego de Quasar
 
 ## Tecnologías utilizadas
 El proyecto contiene un servidor montado en [NodeJS](https://nodejs.org/) utilizando [ExpressJS](http://expressjs.com/) como framwork del lado del servidor. Tambien se utilizo [App Engine](https://cloud.google.com/appengine?hl=es) para tener la api montada en la nube y poder consumir de ella en todo momento.
